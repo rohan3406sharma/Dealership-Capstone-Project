@@ -1,0 +1,277 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Dealership Website</title>
+
+    <link rel="stylesheet" href="./styles.css">
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: #f4f7fa;
+            color: #263238;
+            line-height: 1.6;
+        }
+
+        nav {
+            background: #17365d;
+            color: white;
+            padding: 16px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 12px;
+        }
+
+        nav a:hover,
+        nav a.active {
+            color: #ffd166;
+            font-weight: bold;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 45px 20px;
+            background: #e2edf8;
+        }
+
+        .hero h1 {
+            color: #17365d;
+            font-size: 38px;
+            margin: 0 0 10px;
+        }
+
+        .container {
+            max-width: 1050px;
+            margin: 35px auto;
+            padding: 0 20px;
+        }
+
+        .contact-layout {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 28px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 4px 15px #00000012;
+        }
+
+        .card h2 {
+            color: #17365d;
+            margin-top: 0;
+        }
+
+        .contact-item {
+            margin: 18px 0;
+        }
+
+        .contact-item strong {
+            display: block;
+            color: #17365d;
+        }
+
+        .contact-item a {
+            color: #1769aa;
+            overflow-wrap: anywhere;
+        }
+
+        .contact-image {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 9px;
+            margin-bottom: 15px;
+        }
+
+        form label {
+            display: block;
+            font-weight: bold;
+            margin: 12px 0 5px;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccd5df;
+            border-radius: 6px;
+            font: inherit;
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 120px;
+        }
+
+        button {
+            margin-top: 16px;
+            padding: 12px 22px;
+            background: #17365d;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background: #24558b;
+        }
+
+        footer {
+            background: #17365d;
+            color: white;
+            text-align: center;
+            padding: 18px;
+            margin-top: 45px;
+        }
+
+        @media (max-width: 600px) {
+            nav {
+                gap: 12px;
+                padding: 16px 5%;
+            }
+
+            nav a {
+                margin: 0 6px;
+            }
+
+            .hero h1 {
+                font-size: 30px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav>
+        <strong>Dealership Website</strong>
+        <div>
+            <a href="/">Home</a>
+            <a href="./About.html">About Us</a>
+            <a href="./Contact.html" class="active" aria-current="page">
+                Contact Us
+            </a>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <h1>Contact Us</h1>
+        <p>We're here to help you with your dealership-related questions.</p>
+    </section>
+
+    <main class="container">
+        <div class="contact-layout">
+
+            <section class="card">
+                <img
+                    class="contact-image"
+                    src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=900"
+                    alt="Modern office building">
+
+                <h2>Get in Touch</h2>
+                <p>
+                    Have a question about a dealership, vehicle information,
+                    or customer reviews? Contact our team using the details below.
+                </p>
+
+                <div class="contact-item">
+                    <strong>Email</strong>
+                    <a href="mailto:rohan@example.com">rohan@example.com</a>
+                </div>
+
+                <div class="contact-item">
+                    <strong>Phone</strong>
+                    <a href="tel:+911234567890">+91 12345 67890</a>
+                </div>
+
+                <div class="contact-item">
+                    <strong>Office Address</strong>
+                    <span>Dealership Support Office, Pune, Maharashtra, India</span>
+                </div>
+
+                <div class="contact-item">
+                    <strong>Working Hours</strong>
+                    <span>Monday – Friday: 9:00 AM – 6:00 PM</span>
+                </div>
+            </section>
+
+            <section class="card">
+                <h2>Send Us a Message</h2>
+                <p>Complete the form below to prepare your enquiry.</p>
+
+                <form id="contactForm">
+                    <label for="name">Full Name</label>
+                    <input
+                        type="text"
+                        id="name"
+                        name="name"
+                        placeholder="Enter your full name"
+                        required>
+
+                    <label for="email">Email Address</label>
+                    <input
+                        type="email"
+                        id="email"
+                        name="email"
+                        placeholder="Enter your email"
+                        required>
+
+                    <label for="subject">Subject</label>
+                    <input
+                        type="text"
+                        id="subject"
+                        name="subject"
+                        placeholder="Enter the subject"
+                        required>
+
+                    <label for="message">Message</label>
+                    <textarea
+                        id="message"
+                        name="message"
+                        placeholder="Write your message here"
+                        required></textarea>
+
+                    <button type="submit">Prepare Message</button>
+                    <p id="formStatus" role="status"></p>
+                </form>
+            </section>
+
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Dealership Website. All rights reserved.</p>
+        <p>Helping customers discover dealerships with confidence.</p>
+    </footer>
+
+    <script>
+        document.getElementById("contactForm").addEventListener("submit", function(event) {
+            event.preventDefault();
+
+            document.getElementById("formStatus").textContent =
+                "Your message has been prepared. Please contact us by email to send your enquiry.";
+        });
+    </script>
+
+</body>
+</html>
