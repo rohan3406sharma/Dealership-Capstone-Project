@@ -1,0 +1,170 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Dealership Website</title>
+    <link rel="stylesheet" href="./styles.css">
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            color: #263238;
+            background: #f4f7fa;
+            line-height: 1.6;
+        }
+
+        nav {
+            background: #17365d;
+            padding: 16px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 12px;
+        }
+
+        nav a:hover,
+        nav a.active {
+            color: #ffd166;
+        }
+
+        .hero {
+            text-align: center;
+            padding: 55px 20px;
+            background: #e2edf8;
+        }
+
+        .hero h1 {
+            color: #17365d;
+            font-size: 38px;
+            margin-bottom: 10px;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 35px auto;
+            padding: 0 20px;
+        }
+
+        .team {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background: white;
+            padding: 24px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 4px 15px #00000012;
+        }
+
+        .card img {
+            width: 125px;
+            height: 125px;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
+        .card h3 {
+            color: #17365d;
+            margin-bottom: 4px;
+        }
+
+        .role {
+            color: #2475a5;
+            font-weight: bold;
+        }
+
+        .card a {
+            color: #1769aa;
+            overflow-wrap: anywhere;
+        }
+
+        footer {
+            background: #17365d;
+            color: white;
+            text-align: center;
+            padding: 18px;
+            margin-top: 45px;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <strong style="color:white;">Dealership Website</strong>
+        <div>
+            <a href="/">Home</a>
+            <a href="./About.html" class="active">About Us</a>
+            <a href="./Contact.html">Contact Us</a>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <h1>About Us</h1>
+        <p>Your trusted destination for discovering dealerships and vehicles.</p>
+    </section>
+
+    <main class="container">
+        <h2>Who We Are</h2>
+        <p>
+            We are a dealership information platform designed to help customers
+            explore dealerships, discover vehicle makes and models, read customer
+            reviews, and share their own experiences. Our goal is to make
+            dealership information accessible and convenient.
+        </p>
+
+        <h2>Meet Our Team</h2>
+
+        <div class="team">
+            <article class="card">
+                <img
+                    src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400"
+                    alt="Portrait representing the project manager">
+                <h3>Rohan Sharma</h3>
+                <p class="role">Project Manager</p>
+                <p>Coordinates project planning, development, and delivery.</p>
+                <a href="mailto:rohan@example.com">rohan@example.com</a>
+            </article>
+
+            <article class="card">
+                <img
+                    src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400"
+                    alt="Portrait representing the frontend developer">
+                <h3>Priya Patel</h3>
+                <p class="role">Frontend Developer</p>
+                <p>Focuses on user-friendly interfaces and responsive design.</p>
+                <a href="mailto:priya@example.com">priya@example.com</a>
+            </article>
+
+            <article class="card">
+                <img
+                    src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=400"
+                    alt="Portrait representing the backend developer">
+                <h3>Arjun Mehta</h3>
+                <p class="role">Backend Developer</p>
+                <p>Works on Django services, APIs, and application data.</p>
+                <a href="mailto:arjun@example.com">arjun@example.com</a>
+            </article>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Dealership Website. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
