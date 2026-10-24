@@ -1,0 +1,18 @@
+```bash
+curl -X POST "http://localhost:8000/djangoapp/login" \
+  -H "Content-Type: application/json" \
+  -d '{"userName":"YOUR_VALID_USERNAME","password":"YOUR_VALID_PASSWORD"}' \
+  -c cookies.txt -i
+```
+
+
+
+```http
+HTTP/1.1 200 OK
+Content-Type: application/json
+
+{
+  "userName": "YOUR_VALID_USERNAME",
+  "status": "Authenticated"
+}
+```
