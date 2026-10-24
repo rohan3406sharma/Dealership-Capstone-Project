@@ -6,7 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us | Dealership Website</title>
 
-    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="/static/bootstrap.min.css">
+    <link rel="stylesheet" href="/static/style.css">
 
     <style>
         * {
@@ -15,38 +16,50 @@
 
         body {
             margin: 0;
-            font-family: Arial, sans-serif;
+            font-family: Arial, Helvetica, sans-serif;
             background: #f4f7fa;
             color: #263238;
             line-height: 1.6;
         }
 
-        nav {
+        .navbar-custom {
             background: #17365d;
-            color: white;
-            padding: 16px 8%;
+            padding: 14px 7%;
             display: flex;
             justify-content: space-between;
             align-items: center;
             flex-wrap: wrap;
         }
 
-        nav a {
-            color: white;
+        .navbar-custom .brand {
+            color: #fff;
+            font-size: 21px;
+            font-weight: bold;
             text-decoration: none;
-            margin: 0 12px;
         }
 
-        nav a:hover,
-        nav a.active {
+        .navbar-custom .nav-links {
+            display: flex;
+            gap: 22px;
+            flex-wrap: wrap;
+        }
+
+        .navbar-custom .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            padding: 7px 0;
+        }
+
+        .navbar-custom .nav-links a:hover,
+        .navbar-custom .nav-links a.active {
             color: #ffd166;
-            font-weight: bold;
+            border-bottom: 2px solid #ffd166;
         }
 
         .hero {
-            text-align: center;
-            padding: 45px 20px;
             background: #e2edf8;
+            text-align: center;
+            padding: 42px 20px;
         }
 
         .hero h1 {
@@ -55,32 +68,46 @@
             margin: 0 0 10px;
         }
 
-        .container {
-            max-width: 1050px;
+        .hero p {
+            margin: 0;
+        }
+
+        .container-custom {
+            max-width: 1100px;
             margin: 35px auto;
             padding: 0 20px;
         }
 
         .contact-layout {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(2, minmax(0, 1fr));
             gap: 28px;
         }
 
-        .card {
-            background: white;
-            border-radius: 12px;
+        .contact-card {
+            background: #fff;
             padding: 25px;
-            box-shadow: 0 4px 15px #00000012;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
         }
 
-        .card h2 {
+        .contact-card h2 {
             color: #17365d;
             margin-top: 0;
         }
 
+        .contact-image {
+            display: block;
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+
         .contact-item {
-            margin: 18px 0;
+            margin: 17px 0;
+            overflow-wrap: anywhere;
         }
 
         .contact-item strong {
@@ -90,68 +117,71 @@
 
         .contact-item a {
             color: #1769aa;
-            overflow-wrap: anywhere;
         }
 
-        .contact-image {
-            width: 100%;
-            height: 220px;
-            object-fit: cover;
-            border-radius: 9px;
+        .form-group {
             margin-bottom: 15px;
         }
 
-        form label {
+        .form-group label {
             display: block;
             font-weight: bold;
-            margin: 12px 0 5px;
+            margin-bottom: 6px;
         }
 
-        input,
-        textarea {
+        .form-group input,
+        .form-group textarea {
+            display: block;
             width: 100%;
-            padding: 12px;
+            padding: 11px;
             border: 1px solid #ccd5df;
-            border-radius: 6px;
+            border-radius: 5px;
             font: inherit;
         }
 
-        textarea {
-            resize: vertical;
+        .form-group textarea {
             min-height: 120px;
+            resize: vertical;
         }
 
-        button {
-            margin-top: 16px;
-            padding: 12px 22px;
+        .submit-button {
             background: #17365d;
-            color: white;
+            color: #fff;
             border: none;
-            border-radius: 6px;
+            border-radius: 5px;
+            padding: 12px 22px;
             cursor: pointer;
             font-size: 16px;
         }
 
-        button:hover {
+        .submit-button:hover {
             background: #24558b;
         }
 
         footer {
-            background: #17365d;
-            color: white;
-            text-align: center;
-            padding: 18px;
             margin-top: 45px;
+            background: #17365d;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
         }
 
-        @media (max-width: 600px) {
-            nav {
+        footer p {
+            margin: 4px 0;
+        }
+
+        @media (max-width: 700px) {
+            .navbar-custom {
                 gap: 12px;
-                padding: 16px 5%;
+                padding: 15px 5%;
             }
 
-            nav a {
-                margin: 0 6px;
+            .navbar-custom .nav-links {
+                gap: 14px;
+            }
+
+            .contact-layout {
+                grid-template-columns: 1fr;
             }
 
             .hero h1 {
@@ -163,34 +193,35 @@
 
 <body>
 
-    <nav>
-        <strong>Dealership Website</strong>
-        <div>
+    <nav class="navbar-custom">
+        <a class="brand" href="/">Dealership Website</a>
+
+        <div class="nav-links">
             <a href="/">Home</a>
-            <a href="./About.html">About Us</a>
-            <a href="./Contact.html" class="active" aria-current="page">
-                Contact Us
-            </a>
+            <a href="/static/About.html">About Us</a>
+            <a href="/static/Contact.html"
+               class="active"
+               aria-current="page">Contact Us</a>
         </div>
     </nav>
 
-    <section class="hero">
+    <header class="hero">
         <h1>Contact Us</h1>
-        <p>We're here to help you with your dealership-related questions.</p>
-    </section>
+        <p>We are here to help with your dealership and vehicle enquiries.</p>
+    </header>
 
-    <main class="container">
+    <main class="container-custom">
         <div class="contact-layout">
 
-            <section class="card">
+            <section class="contact-card">
                 <img
                     class="contact-image"
-                    src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=900"
-                    alt="Modern office building">
+                    src="/static/cars.jpeg"
+                    alt="Cars available at a dealership">
 
                 <h2>Get in Touch</h2>
                 <p>
-                    Have a question about a dealership, vehicle information,
+                    Have questions about dealerships, vehicle information,
                     or customer reviews? Contact our team using the details below.
                 </p>
 
@@ -211,48 +242,64 @@
 
                 <div class="contact-item">
                     <strong>Working Hours</strong>
-                    <span>Monday – Friday: 9:00 AM – 6:00 PM</span>
+                    <span>Monday–Friday, 9:00 AM–6:00 PM</span>
                 </div>
             </section>
 
-            <section class="card">
+            <section class="contact-card">
+                <img
+                    class="contact-image"
+                    src="/static/contactus.png"
+                    alt="Contact our dealership support team">
+
                 <h2>Send Us a Message</h2>
-                <p>Complete the form below to prepare your enquiry.</p>
+                <p>Fill in the form to prepare your enquiry.</p>
 
                 <form id="contactForm">
-                    <label for="name">Full Name</label>
-                    <input
-                        type="text"
-                        id="name"
-                        name="name"
-                        placeholder="Enter your full name"
-                        required>
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input
+                            type="text"
+                            id="name"
+                            name="name"
+                            placeholder="Enter your full name"
+                            required>
+                    </div>
 
-                    <label for="email">Email Address</label>
-                    <input
-                        type="email"
-                        id="email"
-                        name="email"
-                        placeholder="Enter your email"
-                        required>
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="Enter your email address"
+                            required>
+                    </div>
 
-                    <label for="subject">Subject</label>
-                    <input
-                        type="text"
-                        id="subject"
-                        name="subject"
-                        placeholder="Enter the subject"
-                        required>
+                    <div class="form-group">
+                        <label for="subject">Subject</label>
+                        <input
+                            type="text"
+                            id="subject"
+                            name="subject"
+                            placeholder="Enter the subject"
+                            required>
+                    </div>
 
-                    <label for="message">Message</label>
-                    <textarea
-                        id="message"
-                        name="message"
-                        placeholder="Write your message here"
-                        required></textarea>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea
+                            id="message"
+                            name="message"
+                            placeholder="Write your message"
+                            required></textarea>
+                    </div>
 
-                    <button type="submit">Prepare Message</button>
-                    <p id="formStatus" role="status"></p>
+                    <button class="submit-button" type="submit">
+                        Prepare Message
+                    </button>
+
+                    <p id="formStatus" role="status" aria-live="polite"></p>
                 </form>
             </section>
 
@@ -265,12 +312,15 @@
     </footer>
 
     <script>
-        document.getElementById("contactForm").addEventListener("submit", function(event) {
-            event.preventDefault();
+        document.getElementById("contactForm").addEventListener(
+            "submit",
+            function (event) {
+                event.preventDefault();
 
-            document.getElementById("formStatus").textContent =
-                "Your message has been prepared. Please contact us by email to send your enquiry.";
-        });
+                document.getElementById("formStatus").textContent =
+                    "Your enquiry form has been completed. Contact us by email to send your message.";
+            }
+        );
     </script>
 
 </body>
